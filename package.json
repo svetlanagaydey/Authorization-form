@@ -2,10 +2,10 @@
   "name": "AuthenticationFront",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "./src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/app.js",
+    "start": "nodemon ./src/app.js",
     "start-server-dev": "nodemon ./src/app.js",
     "start-react-dev": "npm run build --prefix client",
     "build-react": "npm run build --prefix client",
