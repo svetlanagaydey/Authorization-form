@@ -21,5 +21,6 @@ const myFunction = async () => {
     const data = jwt.verify(token, 'thisismynewcourse')
     console.log(data)
 }
+//"heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
 
 myFunction()
