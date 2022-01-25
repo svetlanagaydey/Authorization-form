@@ -1,20 +1,25 @@
-const { config } = require('dotenv')
-
-require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
-const path = require('path');
+require('./db/mongoose');
+const userRouter = require('./routers/user');
+
 const app = express();
+const port = process.env.PORT || 3000;
 
-const publicPath = path.join(__dirname, "../client/build");
-
-app.use(cors());
 app.use(express.json());
-app.use(express.static(publicPath));
+app.use(userRouter);
 
-app.use("*", (req, res) => {
-    res.send("this route is not exist")
-});
-const PORT = process.env.PORT;
+app.listen(port, () => {
+  console.log('Server is up on port ' + port)
+})
 
-app.listen(PORT, () => console.log("Server up on port " + PORT));
+const jwt = require('jsonwebtoken')
+
+const myFunction = async () => {
+    const token = jwt.sign({ _id: 'abc123' }, 'thisismynewcourse', { expiresIn: '7 days' })
+    console.log(token)
+
+    const data = jwt.verify(token, 'thisismynewcourse')
+    console.log(data)
+}
+
+myFunction()
