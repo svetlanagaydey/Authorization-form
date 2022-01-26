@@ -1,5 +1,5 @@
 {
-  "name": "AuthenticationFront",
+  "name": "authentication",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "concurrently": "^7.0.0",
     "cors": "^2.8.5",
     "dotenv": "^14.3.0",
