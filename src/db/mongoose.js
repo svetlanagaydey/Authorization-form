@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://127.0.0.1:27017/authentification-api', {
+mongoose.connect('mongodb+srv://svetlanagaydey:Nikita777!@firstclaster.gj2ij.mongodb.net/test', {
     useNewUrlParser: true
 })

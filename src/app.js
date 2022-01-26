@@ -4,8 +4,6 @@ const userRouter = require('./routers/user');
 const cors = require("cors")
 const path = require("path")
 
-
-
 const app = express();
 
 const publicPath = path.join(__dirname, "../client/build")
@@ -24,16 +22,3 @@ app.use("*", (req ,res) =>{
 app.listen(port, () => {
   console.log('Server is up on port ' + port)
 })
-
-const jwt = require('jsonwebtoken')
-
-// const myFunction = async () => {
-//     const token = jwt.sign({ _id: 'abc123' }, 'thisismynewcourse', { expiresIn: '7 days' })
-//     console.log(token)
-
-//     const data = jwt.verify(token, 'thisismynewcourse')
-//     console.log(data)
-// }
-//"heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
-
-// myFunction()

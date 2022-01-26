@@ -11,6 +11,7 @@ router.post('/users', async (req, res) => {
         const token = await user.generateAuthToken()
         res.status(201).send({ user, token })
     } catch (e) {
+        console.log(e);
         res.status(400).send(e)
     }
 })
@@ -25,19 +26,19 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
-// router.get('/users/me', auth, async (req, res) => {
-//     res.send(req.user)
-// })
-
 router.get('/users/me', auth, async (req, res) => {
-    try {
-        const user = req.user;
-        res.send(user);
-    }catch(e) {
-        res.status(501).send({error: "error"})
-    }
     res.send(req.user)
 })
+
+// router.get('/users/me', auth, async (req, res) => {
+//     try {
+//         const user = req.user;
+//         res.send(user);
+//     }catch(e) {
+//         res.status(501).send({error: "error"})
+//     }
+//     //res.send(req.user)
+// })
 
 router.post('/users/logout', auth, async (req, res) => {
     try {
